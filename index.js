@@ -371,7 +371,7 @@ async function starts() {
 					break
 				case 'tiktok':
 					if (args.length < 1) return reply('Urlnya mana um?')
-					if (!isUrl(args[0]) && !args[0].includes('https://www.tiktok.com/')) return reply(mess.error.Iv)
+					if (!isUrl(args[0]) && !args[0].includes('https://tiktok.com/')) return reply(mess.error.Iv)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/tiktok?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
