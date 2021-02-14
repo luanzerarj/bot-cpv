@@ -305,8 +305,8 @@ async function starts() {
 					if (args.length < 2) return client.sendMessage(from, '*Coloque o texto.*', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
-					dtt.length > 600
-					? reply('*Desculpe, texto muito grande.*')
+					dtt.length > 1000
+					? reply('*Texto muito grande filho da puta, 1000 caracteres eh o maximo.*')
 					: gtts.save(ranm, dtt, function() {
 						client.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 						fs.unlinkSync(ranm)
@@ -429,23 +429,22 @@ async function starts() {
 					})
 					break
 				case 'geral':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isOwner) return reply(mess.only.group)
 					members_id = []
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
 					for (let mem of groupMembers) {
-						teks += `*#* @${mem.jid.split('@')[0]}\n`
+						teks += `*╠•@${mem.jid.split('@')[0]}\n*`
 						members_id.push(mem.jid)
 					}
 					mentions(teks, members_id, true)
 					break
-                                case 'geral2':
+                                /*case 'geral2':
 					members_id = []
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
 					for (let mem of groupMembers) {
-						teks += `╠➥ @${mem.jid.split('@')[0]}\n`
+						teks += `╠• @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
 					reply(teks)
@@ -459,7 +458,7 @@ async function starts() {
 						members_id.push(mem.jid)
 					}
 					client.sendMessage(from, teks, text, {detectLinks: false, quoted: mek})
-					break
+					break*/
 				case 'clearall':
 					if (!isOwner) return reply('*Cade teu ADM arrombado kkkkkkkkkkkkkkkk*')
 					anu = await client.chats.all()
