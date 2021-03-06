@@ -664,6 +664,19 @@ async function starts() {
 						reply('caralho mamou gostoso entao kkkkkkkkkkkkkkkkkkkk')
 					}
 					break*/
+case 'sarra':
+						if (mentioned.length > 1) {
+							teks = 'fuzil\n'
+							for (let _ of mentioned) {
+								teks += `@${_.split('@')[0]}\n`
+							}
+							mentions(from, mentioned, true)
+							client.fuzil(from, mentioned)
+						} else {
+							mentions(`*O @${mentioned[0].split('@')[0]} sarra nela com fuzil na bandoleira 🔥🚩🐊*`, mentioned, true)
+							client.fuzil(from, mentioned)
+						}
+						break
 			    	case 'mamei':
 				    if (args.length < 1) return reply ('*CARALHO, MAMOU GOSTOSO *GLUB* *GLUB* *GLUB* KKKKKKKKKKKKK*')
 		            		break
