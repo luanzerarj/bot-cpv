@@ -5,6 +5,8 @@
   "main": "index.js",
   "directories": {
     "lib": "lib"
+    "src": "src",
+    "plugins": "plugins"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
