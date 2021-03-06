@@ -12,14 +12,14 @@ let handler  = async (m, { conn, text }) => {
 handler.help = ['ttp <teks>']
 handler.tags = ['sticker']
 handler.command = /^ttp$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
+handler.owner = true
+handler.mods = true
+handler.premium = true
+handler.group = true
+handler.private = true
 
-handler.admin = false
-handler.botAdmin = false
+handler.admin = true
+handler.botAdmin = true
 
 handler.fail = null
 
