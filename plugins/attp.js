@@ -8,7 +8,7 @@ let handler  = async (m, { conn, text }) => {
 }
 handler.help = ['attp <teks>']
 handler.tags = ['sticker']
-handler.command = /^attp$/i
+handler.command = rgbtexto
 handler.owner = true
 handler.mods = true
 handler.premium = true
